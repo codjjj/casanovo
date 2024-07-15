@@ -249,7 +249,7 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
         scores = torch.full(
             size=(batch, length, vocab, beam), fill_value=torch.nan
         )
-        scores = scores.type_as(spectra)
+        scores = scores.type_as(spectra) 
         tokens = torch.zeros(batch, length, beam, dtype=torch.int64)
         tokens = tokens.to(self.encoder.device)
 
